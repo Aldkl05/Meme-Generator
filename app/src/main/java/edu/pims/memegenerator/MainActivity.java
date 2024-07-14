@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity  {
 
    void goToGenerateMEMEScreen(int name){
         Intent intent = new Intent(MainActivity.this, MemeGenerator.class);
-        intent.putExtra("meme", name);
+        intent.putExtra("drawableName", "meme"+name);
         startActivity(intent);
 
    }

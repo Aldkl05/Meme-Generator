@@ -14,7 +14,7 @@ import android.widget.EditText;
 
 public class MemeFragment extends Fragment {
 
-    EditText topText, bottomText;
+    EditText editTopText, editBottomText;
 
     public MemeFragment() {
         // Required empty public constructor
@@ -27,8 +27,13 @@ public class MemeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_meme, container, false);
-        topText = view.findViewById(R.id.topTextEdit);
-        bottomText = view.findViewById(R.id.bottomTextEdit);
+        editTopText = view.findViewById(R.id.topTextEdit);
+        editBottomText = view.findViewById(R.id.bottomTextEdit);
+
+
+
+
+
 
 
         return view;

@@ -1,85 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-
-
-<LinearLayout
-    android:layout_marginBottom="20dp"
     android:orientation="vertical"
-    
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
+    android:padding="16dp">
 
     <fragment
-         android:id="@+id/generateMeme"
+        android:id="@+id/generateMeme"
         android:name="edu.pims.memegenerator.MemeFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-<View
-    android:layout_width="match_parent"
-    android:layout_height="10dp"
-    />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp" />
 
     <LinearLayout
         android:id="@+id/memeLayout"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp">
 
-    <TextView
-        android:id="@+id/topTextView"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textAllCaps="true"
-        android:textSize="16sp"
-        android:padding="20dp"
-        android:background="@color/black"
-        />
+        <TextView
+            android:id="@+id/topTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:padding="16dp"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
-    <ImageView
-        android:id="@+id/memeImageView"
-        android:layout_width="match_parent"
-        android:layout_height="220dp"
-        android:src="@drawable/meme1"
-        android:scaleType="fitXY"
-        />
+        <ImageView
+            android:id="@+id/memeImageView"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/meme1" />
 
-    <TextView
-        android:id="@+id/bottomTextView"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textAllCaps="true"
-        android:textSize="16sp"
-        android:padding="20dp"
-        android:background="@color/black"
-        />
-
+        <TextView
+            android:id="@+id/bottomTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:padding="16dp"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
     </LinearLayout>
-
-</LinearLayout>
-
 
     <Button
         android:id="@+id/generateMemeBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:text="Generate Meme"
-        android:textSize="28sp"
-        android:elevation="20dp"
-        android:textStyle="bold"
         android:backgroundTint="#51C0F3"
-        />
+        android:elevation="4dp"
+        android:text="Generate Meme"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-</RelativeLayout>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        />
+</LinearLayout>
+</ScrollView>
