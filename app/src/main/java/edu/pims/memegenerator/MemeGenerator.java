@@ -2,6 +2,7 @@ package edu.pims.memegenerator;
 
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -24,6 +25,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -74,6 +76,29 @@ public class MemeGenerator extends AppCompatActivity {
             public void onClick(View v) {
 
                 //Button to genereate meme and save in phone gallery
+                AlertDialog.Builder builder=new AlertDialog.Builder(MemeGenerator.this);
+                builder.setTitle("save to gallery");
+                builder.setMessage("do you want to save meme to galary");
+                builder.setCancelable(false);
+
+                builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                         generateMeme();
+                         finish();
+                    }
+                });
+
+                builder.setNegativeButton("no", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                         dialogInterface.dismiss();
+
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
 
                //  generateMeme();
             }
@@ -84,7 +109,13 @@ public class MemeGenerator extends AppCompatActivity {
 
 
 
+ void updateTopText(String text){
+        topTextView.setText(text);
+ }
 
+    void updateBottomText(String text){
+        bottomTextView.setText(text);
+    }
 
 
 
